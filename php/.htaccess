@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /lan_inventory/index.php/$1 [L]
+	RewriteCond $1 !^(index\.php|images|robots\.txt|css)
+</IfModule>
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /lan_inventory/
+</IfModule>
