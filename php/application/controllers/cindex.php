@@ -8,8 +8,7 @@ class CIndex extends CI_Controller
 		$data['base'] = $this->config->item('base_url');
 		$data['title']= 'The Philippine Newlong Corporation';
 		$data['content']= 'home';
-		$this->load->helper('url');
-		$segments = array('cindex','index');
+		$data['url']= 'cindex/index';
 		$this->load->view('template', $data);
 	}
 
