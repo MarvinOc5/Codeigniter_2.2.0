@@ -17,10 +17,10 @@ function clearText(field)
 }
 </script>
 
-<link rel="stylesheet" type="text/css" href="<?php echo $base ?>/media/theme/css/ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="../media/theme/css/ddsmoothmenu.css" />
 
-<script type="text/javascript" src="<?php echo $base ?>/media/theme/js/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo $base ?>/media/theme/js/ddsmoothmenu.js">
+<script type="text/javascript" src="../media/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="../media/theme/js/ddsmoothmenu.js">
 
 /***********************************************
 * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
