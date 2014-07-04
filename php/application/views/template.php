@@ -61,7 +61,7 @@ ddsmoothmenu.init({
     
     <div id="templatemo_menu" class="ddsmoothmenu">
         <ul>
-            <li><a href="<?php echo $base ?>/cindex/index">Home</a></li>
+            <li><a href="<?php echo $base ?>cindex/index">Home</a></li>
             <li><a href="<?php echo $base ?>/cproducts/products">Products</a>
                 <ul>
                     <li><a href="http://www.templatemo.com/page/1">Sub menu 1</a></li>
@@ -91,7 +91,7 @@ ddsmoothmenu.init({
 
 <div id="templatemo_cr_bar_wrapper">
 	<div id="templatemo_cr_bar">
-    	All rights reserved Copyright © 2013 <a href="#">The Philippine Newlong Corporation</a>. <a href="http://www.templatemo.com" target="_parent">Home</a> | 
+    	All rights reserved Copyright ï¿½ 2013 <a href="#">The Philippine Newlong Corporation</a>. <a href="http://www.templatemo.com" target="_parent">Home</a> | 
     	<a href="http://www.templatemo.com" target="_parent">Products</a> | <a href="http://www.templatemo.com" target="_parent">About us</a> | <a href="http://www.templatemo.com" target="_parent">Contact us</a>
     </div>
 </div>
