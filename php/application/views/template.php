@@ -61,7 +61,7 @@ ddsmoothmenu.init({
     
     <div id="templatemo_menu" class="ddsmoothmenu">
         <ul>
-            <li><a href="<?php echo site_url('cindex/index'); ?>">Home</a></li>
+            <li><a href="<?php $this->load->url($url);?>">Home</a></li>
             <li><a href="<?php echo $base ?>/cproducts/products">Products</a>
                 <ul>
                     <li><a href="http://www.templatemo.com/page/1">Sub menu 1</a></li>
