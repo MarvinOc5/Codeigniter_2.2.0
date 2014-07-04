@@ -5,9 +5,9 @@
 <title><?php echo $title;?></title>
 <meta name="keywords" content="green jelly, theme, free templates, nivo image slider, website, templatemo, CSS, HTML" />
 <meta name="description" content="Green Jelly Theme, free CSS template provided by templatemo.com" />
-<link href="<?php echo $base ?>/media/theme/css/templatemo_style.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="<?php echo $base ?>/media/theme/images/small_logo.png">
-<link rel="stylesheet" href="<?php echo $base ?>/media/theme/css/nivo-slider.css" type="text/css" media="screen" />
+<link href="../media/theme/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../media/theme/images/small_logo.png">
+<link rel="stylesheet" href="../media/theme/css/nivo-slider.css" type="text/css" media="screen" />
 
 <script language="javascript" type="text/javascript">
 function clearText(field)
