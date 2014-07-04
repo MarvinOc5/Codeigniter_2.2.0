@@ -7,7 +7,6 @@ class CIndex extends CI_Controller
 	{
 		$data['base'] = $this->config->item('base_url');
 		$data['title']= 'The Philippine Newlong Corporation';
-		$this->load->helper('url');
 		$data['content']= 'home';
 		$this->load->view('template', $data);
 	}
