@@ -9,7 +9,7 @@ class CIndex extends CI_Controller
 		$data['title']= 'The Philippine Newlong Corporation';
 		$data['content']= 'home';
 		$this->load->helper('url');
-		$segments = array('cindex','index','home');
+		$segments = array('cindex','index');
 		$this->load->view('template', $data);
 	}
 
