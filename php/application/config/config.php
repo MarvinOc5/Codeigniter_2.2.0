@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://codeigniter3-codeigniteroc5.rhcloud.com/';
 
 /*
 |--------------------------------------------------------------------------
