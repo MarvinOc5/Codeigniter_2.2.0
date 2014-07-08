@@ -5,11 +5,6 @@ class cuser extends CI_Controller
 	{
 		if($this->_submit_register()===FALSE)
 		{	
-			if ('Administrator'!=$this->session->userdata('userlevel'))
-			{
-				header('Location: '.site_url('/cindex/index'));
-				$this->session->set_flashdata('error',' You dont have privilage to access that page!');
-			}
 			$data['base'] = $this->config->item('base_url');
 			$data['title']= 'Registration';
 			$data['content']= 'register';
@@ -30,5 +25,17 @@ class cuser extends CI_Controller
 			$this->session->set_flashdata('message','Registration Successful!');
 			redirect('cuser/viewuser');
 		}		
+	}
+	
+	
+	private function _submit_register()
+	{
+		$this->form_validation->set_rules('username', 'Username','trim|required|min_length[1]|max_length[50]|xss_clean|callback_username_check');
+		$this->form_validation->set_rules('lastname', 'Last Name','trim|required|min_length[1]|max_length[1000]|xss_clean');
+		$this->form_validation->set_rules('firstname', 'First Name','trim|required|min_length[1]|max_length[1000]|xss_clean');
+		$this->form_validation->set_rules('email', 'Email Address','trim|required|min_length[1]|max_length[1000]|xss_clean');
+		$this->form_validation->set_rules('password', 'Password','trim|required|min_length[6]|max_length[1000]|xss_clean');
+		$this->form_validation->set_rules('passcnf', 'Confirmation Password','trim|required|matches[password]|min_length[6]|max_length[1000]|xss_clean');
+		return $this->form_validation->run();
 	}
 ?>
