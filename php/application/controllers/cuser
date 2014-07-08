@@ -1,14 +1,12 @@
-<?php 
-class cuser extends CI_Controller 
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class CUser extends CI_Controller 
 {	
 	function adduser()
 	{
-	
-			$data['base'] = $this->config->item('base_url');
-			$data['title']= 'Registration';
-			$data['content']= 'register';
-			$this->load->view('template',$data);
-		
+		$data['base'] = $this->config->item('base_url');
+		$data['title']= 'The Philippine Newlong Corporation';
+		$data['content']= 'register';
+		$this->load->view('template', $data);
 	}
 	
 ?>
