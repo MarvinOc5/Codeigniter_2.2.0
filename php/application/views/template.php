@@ -45,6 +45,18 @@ ddsmoothmenu.init({
 </head>
 <body>
 <div id="templatemo_wrapper">
+<?php if($this->session->flashdata('message'))  {
+			echo '<div class="warning_box">';
+	     	echo $this->session->flashdata('message'); 
+	      	echo '</div>'; }
+		   if($this->session->flashdata('error'))  {
+			echo '<div class="error_box">';
+	     	echo $this->session->flashdata('error'); 
+	      	echo '</div>'; }
+		   if($this->session->flashdata('valid'))  {
+			echo '<div class="valid_box">';
+	     	echo $this->session->flashdata('valid'); 
+	      	echo '</div>'; } ?>
 	<div id="templatemo_header">
         <div id="site_title">
         	<h1>Official Philippine Importer of Japan's Newlong Machines</h1>
