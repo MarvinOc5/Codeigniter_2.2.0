@@ -24,7 +24,7 @@
     
     <div id="templatemo_main">
         
-         <form action="<?php echo $base ?>/cregister/register" method="post" class="niceform">
+         <form action="<?php echo $base ?>/cuser/adduser" method="post" class="niceform">
          
                 <fieldset>
                     <dl>
