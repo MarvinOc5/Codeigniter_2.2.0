@@ -44,7 +44,14 @@ ddsmoothmenu.init({
   
 </head>
 <body>
-
+<?php  if (!$this->session->userdata('userid'))
+				{
+					$this->session->unset_userdata('userid');
+					$this->session->unset_userdata('userlevel');
+					header('Location: '.site_url(''));
+					$this->session->set_flashdata('error',' You dont have privilage to access that page (You are not Login)!');
+				}
+?>
 <div id="templatemo_wrapper">
 	<div id="templatemo_header">
         <div id="site_title">
