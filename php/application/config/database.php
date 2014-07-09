@@ -55,11 +55,11 @@ if (isset($openshiftsocket)) {
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '';
+$db['default']['hostname'] = '127.13.0.2:3306';
 //$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_PORT';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['username'] = 'adminDKJ3qf1';
+$db['default']['password'] = 'lpvXRi1D-ViX';
+$db['default']['database'] = 'db_ordering';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
