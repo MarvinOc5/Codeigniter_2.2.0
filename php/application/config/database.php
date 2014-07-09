@@ -55,7 +55,7 @@ if (isset($openshiftsocket)) {
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'https://codeigniter5-oclima.rhcloud.com/phpmyadmin/';
+$db['default']['hostname'] = 'mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/';
 //$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_PORT';
 $db['default']['username'] = 'adminDKJ3qf1';
 $db['default']['password'] = 'lpvXRi1D-ViX';
