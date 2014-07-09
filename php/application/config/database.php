@@ -46,7 +46,7 @@
 */
 
 $openshiftsocket = getenv('OPENSHIFT_MYSQL_DB_SOCKET');
-echo "OpenShift socket is [$openshiftsocket]";
+//echo "OpenShift socket is [$openshiftsocket]";
  
 if (isset($openshiftsocket)) {
    ini_set('mysql.default_socket', $openshiftsocket);
