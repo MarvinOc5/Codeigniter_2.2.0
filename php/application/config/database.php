@@ -45,21 +45,21 @@
 | the active record class
 */
 
-$openshiftsocket = getenv('OPENSHIFT_MYSQL_DB_SOCKET');
+/*$openshiftsocket = getenv('OPENSHIFT_MYSQL_DB_SOCKET');
 //echo "OpenShift socket is [$openshiftsocket]";
  
 if (isset($openshiftsocket)) {
    ini_set('mysql.default_socket', $openshiftsocket);
-}
+}*/
 
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_HOST';
-$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_PORT';
-$db['default']['username'] = 'OPENSHIFT_MYSQL_DB_USERNAME';
-$db['default']['password'] = 'OPENSHIFT_MYSQL_DB_PASSWORD';
-$db['default']['database'] = 'OPENSHIFT_APP_NAME';
+$db['default']['hostname'] = 'https://codeigniter5-oclima.rhcloud.com/phpmyadmin/';
+//$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_PORT';
+$db['default']['username'] = 'adminDKJ3qf1';
+$db['default']['password'] = 'lpvXRi1D-ViX';
+$db['default']['database'] = 'db_ordering';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
