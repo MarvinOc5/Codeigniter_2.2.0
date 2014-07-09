@@ -45,13 +45,20 @@
 | the active record class
 */
 
+$openshiftsocket = getenv('OPENSHIFT_MYSQL_DB_SOCKET');
+echo "OpenShift socket is [$openshiftsocket]";
+ 
+if (isset($openshiftsocket)) {
+   ini_set('mysql.default_socket', $openshiftsocket);
+}
+
 $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = 'codeigniter5';
+$db['default']['username'] = 'OPENSHIFT_MYSQL_DB_USERNAME';
+$db['default']['password'] = 'OPENSHIFT_MYSQL_DB_PASSWORD';
+$db['default']['database'] = 'OPENSHIFT_APP_NAME';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
