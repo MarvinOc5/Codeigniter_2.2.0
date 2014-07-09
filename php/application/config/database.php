@@ -55,7 +55,8 @@ if (isset($openshiftsocket)) {
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/';
+$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_HOST';
+$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_PORT';
 $db['default']['username'] = 'OPENSHIFT_MYSQL_DB_USERNAME';
 $db['default']['password'] = 'OPENSHIFT_MYSQL_DB_PASSWORD';
 $db['default']['database'] = 'OPENSHIFT_APP_NAME';
@@ -71,7 +72,6 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-phpinfo();
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
