@@ -45,21 +45,21 @@
 | the active record class
 */
 
-/*$openshiftsocket = getenv('OPENSHIFT_MYSQL_DB_SOCKET');
+$openshiftsocket = getenv('OPENSHIFT_MYSQL_DB_SOCKET');
 //echo "OpenShift socket is [$openshiftsocket]";
  
 if (isset($openshiftsocket)) {
    ini_set('mysql.default_socket', $openshiftsocket);
-}*/
-
+}
+ 
 $active_group = 'default';
 $active_record = TRUE;
-
-$db['default']['hostname'] = 'localhost';
-//$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_PORT';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+ 
+$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_HOST';
+$db['default']['hostname'] = 'OPENSHIFT_MYSQL_DB_PORT';
+$db['default']['username'] = 'OPENSHIFT_MYSQL_DB_USERNAME';
+$db['default']['password'] = 'OPENSHIFT_MYSQL_DB_PASSWORD';
+$db['default']['database'] = 'OPENSHIFT_APP_NAME';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -71,6 +71,8 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+ 
+phpinfo();
 
 
 /* End of file database.php */
