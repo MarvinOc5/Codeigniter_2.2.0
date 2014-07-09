@@ -46,7 +46,7 @@
 */
 
 $openshiftsocket = getenv('OPENSHIFT_MYSQL_DB_SOCKET');
-echo "OpenShift socket is [$openshiftsocket]";
+//echo "OpenShift socket is [$openshiftsocket]";
  
 if (isset($openshiftsocket)) {
    ini_set('mysql.default_socket', $openshiftsocket);
@@ -71,6 +71,7 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
+phpinfo();
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
