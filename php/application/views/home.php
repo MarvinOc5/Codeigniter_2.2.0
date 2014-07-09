@@ -41,8 +41,7 @@
             <img src="<?php echo $base ?>/media/images/3cmpvid.jpg" alt="Image 05" class="image_frame_430" />
             <h3>3CMP</h3>
             <div class="col_2 float_cust">
-            <p><em>For paper, woven-cloth and polyethylene bag. For fertilizer, animal feed, resin pellets, chemical, and various kinds of power materials.</p></em>
-            </div>
+             </div>
             <br class="cleaner" />
             
         </div>
