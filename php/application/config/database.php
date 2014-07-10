@@ -1,107 +1,69 @@
-<?php
-/**
- * This is core configuration file.
- *
- * Use it to configure core behaviour of CakePHP.
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Config
- * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- *
- * Database configuration class.
- * You can specify multiple configurations for production, development and testing.
- *
- * datasource => The name of a supported datasource; valid options are as follows:
- *		Database/Mysql 		- MySQL 4 & 5,
- *		Database/Sqlite		- SQLite (PHP5 only),
- *		Database/Postgres	- PostgreSQL 7 and higher,
- *		Database/Sqlserver	- Microsoft SQL Server 2005 and higher
- *
- * You can add custom database datasources (or override existing datasources) by adding the
- * appropriate file to app/Model/Datasource/Database. Datasources should be named 'MyDatasource.php',
- *
- *
- * persistent => true / false
- * Determines whether or not the database should use a persistent connection
- *
- * host =>
- * the host you connect to the database. To add a socket or port number, use 'port' => #
- *
- * prefix =>
- * Uses the given prefix for all the tables in this database. This setting can be overridden
- * on a per-table basis with the Model::$tablePrefix property.
- *
- * schema =>
- * For Postgres/Sqlserver specifies which schema you would like to use the tables in. Postgres defaults to 'public'. For Sqlserver, it defaults to empty and use
- * the connected user's default schema (typically 'dbo').
- *
- * encoding =>
- * For MySQL, Postgres specifies the character encoding to use when connecting to the
- * database. Uses database default not specified.
- *
- * unix_socket =>
- * For MySQL to connect via socket specify the `unix_socket` parameter instead of `host` and `port`
- *
- * settings =>
- * Array of key/value pairs, on connection it executes SET statements for each pair
- * For MySQL : http://dev.mysql.com/doc/refman/5.6/en/set-statement.html
- * For Postgres : http://www.postgresql.org/docs/9.2/static/sql-set.html
- * For Sql Server : http://msdn.microsoft.com/en-us/library/ms190356.aspx
- */
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/*
+| -------------------------------------------------------------------
+| DATABASE CONNECTIVITY SETTINGS
+| -------------------------------------------------------------------
+| This file will contain the settings needed to access your database.
+|
+| For complete instructions please consult the 'Database Connection'
+| page of the User Guide.
+|
+| -------------------------------------------------------------------
+| EXPLANATION OF VARIABLES
+| -------------------------------------------------------------------
+|
+|	['hostname'] The hostname of your database server.
+|	['username'] The username used to connect to the database
+|	['password'] The password used to connect to the database
+|	['database'] The name of the database you want to connect to
+|	['dbdriver'] The database type. ie: mysql.  Currently supported:
+				 mysql, mysqli, postgre, odbc, mssql, sqlite, oci8
+|	['dbprefix'] You can add an optional prefix, which will be added
+|				 to the table name when using the  Active Record class
+|	['pconnect'] TRUE/FALSE - Whether to use a persistent connection
+|	['db_debug'] TRUE/FALSE - Whether database errors should be displayed.
+|	['cache_on'] TRUE/FALSE - Enables/disables query caching
+|	['cachedir'] The path to the folder where cache files should be stored
+|	['char_set'] The character set used in communicating with the database
+|	['dbcollat'] The character collation used in communicating with the database
+|				 NOTE: For MySQL and MySQLi databases, this setting is only used
+| 				 as a backup if your server is running PHP < 5.2.3 or MySQL < 5.0.7
+|				 (and in table creation queries made with DB Forge).
+| 				 There is an incompatibility in PHP with mysql_real_escape_string() which
+| 				 can make your site vulnerable to SQL injection if you are using a
+| 				 multi-byte character set and are running versions lower than these.
+| 				 Sites using Latin-1 or UTF-8 database character set and collation are unaffected.
+|	['swap_pre'] A default table prefix that should be swapped with the dbprefix
+|	['autoinit'] Whether or not to automatically initialize the database.
+|	['stricton'] TRUE/FALSE - forces 'Strict Mode' connections
+|							- good for ensuring strict SQL while developing
+|
+| The $active_group variable lets you choose which connection group to
+| make active.  By default there is only one group (the 'default' group).
+|
+| The $active_record variables lets you determine whether or not to load
+| the active record class
+*/
 
-class DATABASE_CONFIG {
-        public $default = array(
-                'datasource' => 'Database/Mysql',
-                'persistent' => false,
-                'host'       => '',
-                'port'       => '',
-                'login'      => '',
-                'password'   => '',
-                'database'   => '',
-                'prefix'     => '',
-                //'encoding' => 'utf8',
-        );
+$active_group = 'default';
+$active_record = TRUE;
 
-        public $test = array(
-                'datasource' => 'Database/Mysql',
-                'persistent' => false,
-                'host'       => '',
-		'port'       => '',
-                'login'      => '',
-                'password'   => '',
-                'database'   => 'test_database',
-                'prefix'     => '',
-                //'encoding' => 'utf8',
-        );
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
+$db['default']['dbdriver'] = 'mysql';
+$db['default']['dbprefix'] = '';
+$db['default']['pconnect'] = TRUE;
+$db['default']['db_debug'] = TRUE;
+$db['default']['cache_on'] = FALSE;
+$db['default']['cachedir'] = '';
+$db['default']['char_set'] = 'utf8';
+$db['default']['dbcollat'] = 'utf8_general_ci';
+$db['default']['swap_pre'] = '';
+$db['default']['autoinit'] = TRUE;
+$db['default']['stricton'] = FALSE;
 
-	public function __construct() {
-               if (getenv("OPENSHIFT_MYSQL_DB_HOST")):
-	           $this->default['host']       = getenv("OPENSHIFT_MYSQL_DB_HOST");
-	           $this->default['port']       = getenv("OPENSHIFT_MYSQL_DB_PORT");
-	           $this->default['login']      = getenv("OPENSHIFT_MYSQL_DB_USERNAME");
-	           $this->default['password']   = getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
-	           $this->default['database']   = getenv("OPENSHIFT_APP_NAME");
-	           $this->default['datasource'] = 'Database/Mysql';
-	           $this->test['datasource']    = 'Database/Mysql';
-	       else:
-	           $this->default['host']       = getenv("OPENSHIFT_POSTGRESQL_DB_HOST");
-	           $this->default['port']       = getenv("OPENSHIFT_POSTGRESQL_DB_PORT");
-	           $this->default['login']      = getenv("OPENSHIFT_POSTGRESQL_DB_USERNAME");
-	           $this->default['password']   = getenv("OPENSHIFT_POSTGRESQL_DB_PASSWORD");
-	           $this->default['database']   = getenv("OPENSHIFT_APP_NAME");
-	           $this->default['datasource'] = 'Database/Postgres';
-	           $this->test['datasource']    = 'Database/Postgres';
-	       endif;
-	}
-}
+
+/* End of file database.php */
+/* Location: ./application/config/database.php */
